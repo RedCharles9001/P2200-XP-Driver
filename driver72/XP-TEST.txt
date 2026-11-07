@@ -1,0 +1,53 @@
+P2200 Driver 72 Clean RC1 - XP hardware test pending
+November 4, 2026
+
+Windows XP SP3 32-bit, Quadro P2200 (PCI 10DE:1C31).
+This is a new candidate. Earlier Driver 69/71 results do not validate it.
+It restores the native FIFO request and timer behavior. This needs a real XP test.
+No GPU BIOS flash is involved.
+
+LOCAL USB KIT
+Keep the whole kit together, including Rollback/P2200 Driver 69.exe.
+1. Close games. Run 1-INSTALL.cmd on XP, choose Express, and reboot once.
+   The helper saves a before-install report and handles English Logo prompts.
+2. Confirm a usable desktop and Device Manager with no device error.
+   Start with 3840 x 2160 at 60 Hz, 32-bit desktop color.
+3. Use direct DisplayPort to the ASUS XG27UQDMS. Set OLED Anti-Flicker Off.
+   In Display Properties > Settings > Advanced > Adapter > List All Modes,
+   choose 3840 x 2160, 32-bit color, 120 Hz, then Apply.
+4. Use the monitor's physical controls. Open System Setup > Information
+   (or the monitor's status display). Confirm DisplayPort, 3840 x 2160,
+   and 120 Hz. Photograph that screen. An XP menu saying 120 Hz is insufficient.
+   Leave the desktop running at least one minute and note any flicker or blanking.
+5. Try the same Far Cry and Doom 3 tests previously used with Driver 69.
+   Record whether each game renders normally and returns to the desktop.
+   A 120 Hz signal does not establish 120 game frames per second.
+6. Restart XP once more. Confirm the desktop, selected mode and monitor status.
+7. Run 2-COLLECT-RESULTS.cmd. Return its new Results folder with the monitor
+   photo and your observations. It copies installed driver files for hash checks;
+   it cannot read the monitor's Information screen or prove game stability.
+
+RECOVERY
+If the mode change blanks the display, let the Windows confirmation time out.
+If normal boot fails, use F8 > Enable VGA Mode or Safe Mode.
+Run RESTORE-PREVIOUS-TEST.cmd to reinstall preserved Driver 69; reboot.
+After a failed boot, collect the available result/crash files in Safe Mode.
+Do not keep repeating a failed normal boot.
+
+REBUILD USERS
+The rebuild output contains XP-payload/setup.exe and the modified driver.
+Preserve your own known-working driver/recovery media before testing.
+Use the supplied INSTALL-REBUILT-XP.cmd beside the completed rebuild output
+to check XP SP3 and P2200 identity before opening its setup.exe.
+The source-only rebuild archive does not contain the private Driver 69 installer.
+
+TIMING SCOPE
+The saved ASUS rule is 3840,2160,32,120 with 1066.56 MHz and totals 4000 x 2222.
+It matches monitor ID AUSAA34 only. Other monitors need their own timing review.
+Existing link/depth/bandwidth checks remain; insufficient DP capacity still fails.
+Do not use 75 Hz as an ASUS control. If needed later, the supported intermediate
+timing identified for this monitor is 97 Hz.
+
+ACCEPTANCE
+Only the exact installed candidate hashes plus the operator's real XP results
+can promote this from an offline-verified candidate to an XP-tested build.

@@ -1,0 +1,18 @@
+{
+  "title": "P2200 Driver 76 G95SC Candidate",
+  "miniport_sha256": "b180bb3638ec9ea11a4508637d448e298e7a7daf7c1b60750ccffeaba438aac5",
+  "installer_sha256": "d99c480ae109b85ee083dcb2715f3e806ae3a0c630e566e6f9c4e9eb44cbdf9a",
+  "installer_bytes": 220923306,
+  "payload_files": 635,
+  "all_reextracted_files_match": true,
+  "archive_test_passed": true,
+  "rollback_sha256": "df8c3b6e7d57997e4dab692fda9df539341d3a725dbedaee2f457976e3582e7f",
+  "guard_bytes": 727,
+  "candidate_checks": 222,
+  "firmware_checks": 336,
+  "guard_cases": 330,
+  "region_cases": 3093,
+  "live_XP_tested": false,
+  "installer_executed": false,
+  "USB_copied": false
+}

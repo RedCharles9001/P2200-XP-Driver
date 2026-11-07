@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "miniport_sha256": "522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc",
+  "edid_sha256": "8abb905295bb1b16959eb6a4653b040d61395e9ca3523dd1e607d049edda7eba",
+  "cases": [
+    {
+      "request": 60,
+      "rate_code": 30,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        53325
+      ],
+      "display_events": [
+        {
+          "dp_clock": 53325,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 3
+        },
+        {
+          "mask": 1024,
+          "depth": 3
+        }
+      ],
+      "stop": "0x481a0"
+    },
+    {
+      "request": 120,
+      "rate_code": 30,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        106656
+      ],
+      "display_events": [
+        {
+          "dp_clock": 106656,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 1024,
+          "depth": 2
+        }
+      ],
+      "stop": "0x481a0"
+    },
+    {
+      "request": 120,
+      "rate_code": 20,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        106656
+      ],
+      "display_events": [],
+      "stop": "0x49885"
+    }
+  ],
+  "live_XP_tested": false,
+  "limitations": "Saved-mode replay against the actual clean miniport and display DLL.\nThe source mode cache and link state are modeled; execution stops before hardware\nprogramming. This does not prove physical DP output or monitor acceptance.\nSPDX-License-Identifier: GPL-3.0-only WITH NVIDIA-integration-exception\n"
+}

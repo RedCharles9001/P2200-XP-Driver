@@ -1,0 +1,63 @@
+{
+  "Title": "P2200 Driver 72",
+  "Windows11GuardsPassed": true,
+  "Tests": [
+    {
+      "Script": "Continue-Nvidia-XP.exe",
+      "Arguments": [
+        "P2200 Driver 72.exe"
+      ],
+      "ExitCode": 3,
+      "Output": "REFUSED: installation assistance is only for Windows XP32 SP3. Nothing started or clicked."
+    },
+    {
+      "Script": "Launch-Assisted-XP.vbs",
+      "Arguments": [],
+      "ExitCode": 3,
+      "Output": "This installer is only for Windows XP 32-bit SP3. Nothing was installed."
+    },
+    {
+      "Script": "Launch-XP.vbs",
+      "Arguments": [
+        "install"
+      ],
+      "ExitCode": 3,
+      "Output": "This package is only for Windows XP 32-bit SP3. Nothing was installed."
+    },
+    {
+      "Script": "Launch-XP.vbs",
+      "Arguments": [
+        "restore"
+      ],
+      "ExitCode": 3,
+      "Output": "This package is only for Windows XP 32-bit SP3. Nothing was installed."
+    },
+    {
+      "Script": "Collect-P2200-Startup.vbs",
+      "Arguments": [],
+      "ExitCode": 3,
+      "Output": "Run this collector on the Windows XP 32-bit FragBox. No reports were created here."
+    },
+    {
+      "Script": "Collect-P2200-Startup.vbs",
+      "Arguments": [
+        "--before-install"
+      ],
+      "ExitCode": 3,
+      "Output": "Run this collector on the Windows XP 32-bit FragBox. No reports were created here."
+    },
+    {
+      "Script": "Collect-Crash-Dumps.vbs",
+      "Arguments": [],
+      "ExitCode": 3,
+      "Output": "Run crash-dump collection on Windows XP. No files copied."
+    },
+    {
+      "Script": "Install-Rebuilt-XP.vbs",
+      "Arguments": [],
+      "ExitCode": 3,
+      "Output": "This candidate is only for Windows XP 32-bit SP3. Nothing was installed."
+    }
+  ],
+  "InstallerExecuted": false
+}

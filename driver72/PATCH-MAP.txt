@@ -1,0 +1,299 @@
+P2200 Driver 72 Clean RC1 - complete patch map for SupraGSX review
+
+Miniport SHA-256: 522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc
+Offsets are file offsets; preferred image base is 0x10000.
+The full byte ledger is generated as PATCHES.txt after rebuilding from supplied inputs.
+Firmware bytes are not embedded in this source archive.
+
+FILE 0x00000124 / VA 0x00010124 / 4 bytes: PE header: SizeOfCode includes appended code/data
+  OLD 00 00 9a 00
+  NEW 60 80 9d 00
+
+FILE 0x00000128 / VA 0x00010128 / 4 bytes: PE header: SizeOfInitializedData includes appended code/data
+  OLD 20 a0 4f 00
+  NEW 80 20 53 00
+
+FILE 0x00000158 / VA 0x00010158 / 4 bytes: PE header: SizeOfImage includes appended code/data
+  OLD c0 a0 ef 00
+  NEW 20 21 f3 00
+
+FILE 0x00000160 / VA 0x00010160 / 4 bytes: Recalculate PE checksum
+  OLD 1d 39 f0 00
+  NEW ee ac f3 00
+
+FILE 0x00000398 / VA 0x00010398 / 4 bytes: PE header: Misc_VirtualSize includes appended code/data
+  OLD c0 ed 28 00
+  NEW 20 6e 2c 00
+
+FILE 0x000003A0 / VA 0x000103A0 / 4 bytes: PE header: SizeOfRawData includes appended code/data
+  OLD c0 ed 28 00
+  NEW 20 6e 2c 00
+
+FILE 0x007153A9 / VA 0x007253A9 / 8 bytes: Fifth region comparison: equality or exact actual=12/expected=15; sixth remains strict
+  OLD 8b 4c 24 14 3b 0f 75 43
+  NEW e9 bd 4d 7e 00 90 90 90
+
+FILE 0x007171D4 / VA 0x007271D4 / 6 bytes: Exact 431.02 FECS/GPCCS signatures: bounded 76-to-84-byte descriptor copy
+  OLD 8b 8f 58 01 00 00
+  NEW e9 b3 2f 7e 00 90
+
+FILE 0x00B6B458 / VA 0x00B7B458 / 4 bytes: GP106 family callback: gp106_fecs; existing constructor runs before replacing firmware getters
+  OLD 30 06 4f 00
+  NEW c0 a0 f0 00
+
+FILE 0x00B6B474 / VA 0x00B7B474 / 4 bytes: GP106 family callback: gp106_gpccs; existing constructor runs before replacing firmware getters
+  OLD a0 07 4f 00
+  NEW fe a0 f0 00
+
+FILE 0x00B6B484 / VA 0x00B7B484 / 4 bytes: GP106 family callback: gp106_gr; existing constructor runs before replacing firmware getters
+  OLD b0 12 4f 00
+  NEW 3c a1 f0 00
+
+FILE 0x00CF6956 / VA 0x00D06956 / 4 bytes: SEC2 56-to-84 adapter: accept exact alternate 384.94 build; retain every other guard
+  OLD 8c 7c 4a 01
+  NEW f5 34 50 01
+
+FILE 0x00EB04C1 / VA 0x00EC04C1 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_image
+  OLD 00 3c cd 00
+  NEW 60 12 f4 00
+
+FILE 0x00EB04C8 / VA 0x00EC04C8 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_header
+  OLD 00 49 cd 00
+  NEW 60 20 f4 00
+
+FILE 0x00EB04CE / VA 0x00EC04CE / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_sig_prod
+  OLD 40 49 cd 00
+  NEW 00 21 f4 00
+
+FILE 0x00EB04D5 / VA 0x00EC04D5 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_sig_dbg
+  OLD 60 49 cd 00
+  NEW e0 20 f4 00
+
+FILE 0x00EB04DC / VA 0x00EC04DC / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_patch_loc
+  OLD 80 49 cd 00
+  NEW a0 20 f4 00
+
+FILE 0x00EB04E3 / VA 0x00EC04E3 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_patch_sig
+  OLD a0 49 cd 00
+  NEW c0 20 f4 00
+
+FILE 0x00EB07F0 / VA 0x00EC07F0 / 4 bytes: 431.02 matched ACR resource: length
+  OLD 00 40 00 00
+  NEW 00 41 00 00
+
+FILE 0x00EB07F4 / VA 0x00EC07F4 / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD 40 fb cc 00
+  NEW c0 a4 f0 00
+
+FILE 0x00EB07FC / VA 0x00EC07FC / 4 bytes: 431.02 matched ACR resource: length
+  OLD 24 00 00 00
+  NEW 24 00 00 00
+
+FILE 0x00EB0800 / VA 0x00EC0800 / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD 40 3b cd 00
+  NEW c0 e5 f0 00
+
+FILE 0x00EB0808 / VA 0x00EC0808 / 4 bytes: 431.02 matched ACR resource: length
+  OLD 10 00 00 00
+  NEW 10 00 00 00
+
+FILE 0x00EB080C / VA 0x00EC080C / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD 80 3b cd 00
+  NEW 00 e6 f0 00
+
+FILE 0x00EB0814 / VA 0x00EC0814 / 4 bytes: 431.02 matched ACR resource: length
+  OLD 10 00 00 00
+  NEW 10 00 00 00
+
+FILE 0x00EB0818 / VA 0x00EC0818 / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD a0 3b cd 00
+  NEW 20 e6 f0 00
+
+FILE 0x00EB0820 / VA 0x00EC0820 / 4 bytes: 431.02 matched ACR resource: length
+  OLD 04 00 00 00
+  NEW 04 00 00 00
+
+FILE 0x00EB0824 / VA 0x00EC0824 / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD c0 3b cd 00
+  NEW 40 e6 f0 00
+
+FILE 0x00EB082C / VA 0x00EC082C / 4 bytes: 431.02 matched ACR resource: length
+  OLD 04 00 00 00
+  NEW 04 00 00 00
+
+FILE 0x00EB0830 / VA 0x00EC0830 / 4 bytes: 431.02 matched ACR resource: payload pointer
+  OLD e0 3b cd 00
+  NEW 60 e6 f0 00
+
+FILE 0x00EB0838 / VA 0x00EC0838 / 4 bytes: 384.94 alternate SEC2 resource: length
+  OLD 00 1c 03 00
+  NEW 00 c2 01 00
+
+FILE 0x00EB083C / VA 0x00EC083C / 4 bytes: 384.94 alternate SEC2 resource: payload pointer
+  OLD c0 49 cd 00
+  NEW 80 e6 f0 00
+
+FILE 0x00EB0844 / VA 0x00EC0844 / 4 bytes: 384.94 alternate SEC2 resource: length
+  OLD 90 02 00 00
+  NEW 90 02 00 00
+
+FILE 0x00EB0848 / VA 0x00EC0848 / 4 bytes: 384.94 alternate SEC2 resource: payload pointer
+  OLD c0 65 d0 00
+  NEW 80 a8 f2 00
+
+FILE 0x00EB0850 / VA 0x00EC0850 / 4 bytes: 384.94 alternate SEC2 resource: length
+  OLD c0 00 00 00
+  NEW c0 00 00 00
+
+FILE 0x00EB0854 / VA 0x00EC0854 / 4 bytes: 384.94 alternate SEC2 resource: payload pointer
+  OLD 60 68 d0 00
+  NEW 20 ab f2 00
+
+FILE 0x00EFA0C0 / VA 0x00F0A0C0 / 1024 bytes: Position-independent GP106 constructors/getters, exact 12/15 acceptance and bounded GR descriptor adapter; source src/clean.s
+  OLD <EOF>; appended SHA-256 c1eb43315792977d55238908775a13134ced650d753eb6d61fae041f9a4ac98b
+  NEW bytes: src/clean-code.hex; readable source: src/clean.s
+
+FILE 0x00EFA4C0 / VA 0x00F0A4C0 / 16640 bytes: 431.02 matched ACR resource: acr_ucode_image; donor 431 descriptor 0xd6a260
+  OLD <EOF>; appended SHA-256 b03fcb3095f6fe336dbd83f3140953e1df4f57f7f1cd25829bef8e7d25e50670
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00EFE5C0 / VA 0x00F0E5C0 / 36 bytes: 431.02 matched ACR resource: acr_ucode_header; donor 431 descriptor 0xd6a230
+  OLD <EOF>; appended SHA-256 36c28f92af5434521a95a0e4aa3bd3581862097b6d9d1d66d594b550c2eba7ce
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00EFE5E4 / VA 0x00F0E5E4 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00EFE600 / VA 0x00F0E600 / 16 bytes: 431.02 matched ACR resource: acr_ucode_sig_prod; donor 431 descriptor 0xd6a218
+  OLD <EOF>; appended SHA-256 95a09807a641407e96e3bbc2d8e245f3317400fd9b7ff6d41f63742e98386007
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00EFE610 / VA 0x00F0E610 / 16 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+
+FILE 0x00EFE620 / VA 0x00F0E620 / 16 bytes: 431.02 matched ACR resource: acr_ucode_sig_dbg; donor 431 descriptor 0xd6a200
+  OLD <EOF>; appended SHA-256 ab2c7bc462fad7cc90a43557b0e04934f71edf4ba688c63f7c4610df6edfd82d
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00EFE630 / VA 0x00F0E630 / 16 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+
+FILE 0x00EFE640 / VA 0x00F0E640 / 4 bytes: 431.02 matched ACR resource: acr_ucode_sig_patch_loc; donor 431 descriptor 0xd6a1e8
+  OLD <EOF>; appended SHA-256 0ce8c4b562c5ce2df3b2594a0cd35260bb8d883b3e453ec03c30f9f7ad5b2d1c
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00EFE644 / VA 0x00F0E644 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00EFE660 / VA 0x00F0E660 / 4 bytes: 431.02 matched ACR resource: acr_ucode_sig_patch_ind; donor 431 descriptor 0xd6a1d0
+  OLD <EOF>; appended SHA-256 df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+  NEW 4 zero bytes
+
+FILE 0x00EFE664 / VA 0x00F0E664 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00EFE680 / VA 0x00F0E680 / 115200 bytes: 384.94 alternate SEC2 resource: sec2_image; donor 384 descriptor 0x6f08e8
+  OLD <EOF>; appended SHA-256 83da355a48789b454f214ff27e451dfdacf57eecc6d589efeaa957ee1ed993fa
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F1A880 / VA 0x00F2A880 / 656 bytes: 384.94 alternate SEC2 resource: sec2_desc; donor 384 descriptor 0x6f09f0
+  OLD <EOF>; appended SHA-256 9e1ac1a2deec070736d9f40eb989508ebe0df78d7b9c6de4d5a095e79bc1bff7
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F1AB10 / VA 0x00F2AB10 / 16 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+
+FILE 0x00F1AB20 / VA 0x00F2AB20 / 192 bytes: 384.94 alternate SEC2 resource: sec2_signature; donor 384 descriptor 0x6f0b00
+  OLD <EOF>; appended SHA-256 3ab5df9fc2fd37a52b0c8fb7cc548dc3e6b1a231a6011c7429af64899c765dda
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F1ABE0 / VA 0x00F2ABE0 / 192 bytes: 431.02 GP106 graphics resource: fecs_signature; donor 431 descriptor 0xd634f8
+  OLD <EOF>; appended SHA-256 8cf4bd43cb675037c04f401253d35b8a933d1bf04b98a24b9a4fd79782075a87
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F1ACA0 / VA 0x00F2ACA0 / 192 bytes: 431.02 GP106 graphics resource: gpccs_signature; donor 431 descriptor 0xd630d8
+  OLD <EOF>; appended SHA-256 9f7608fb280bc65b07458167ba0dee7a82a1b4c244a2bfe866fe7bcffee25a09
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F1AD60 / VA 0x00F2AD60 / 90288 bytes: 431.02 GP106 graphics resource: gr_bundle; donor 431 descriptor 0xd63810
+  OLD <EOF>; appended SHA-256 721b4d4f25d1d4327f0bda57bffb58b878d55859bb3062c8bf6c97e33aa00169
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F30E10 / VA 0x00F40E10 / 16 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+
+FILE 0x00F30E20 / VA 0x00F40E20 / 512 bytes: 431.02 GP106 graphics resource: fecs_boot; donor 431 descriptor 0xd633c0
+  OLD <EOF>; appended SHA-256 a350776acb6d80ac30594f962aa6e02f9ae8080960773914648aeae7aadc504c
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F31020 / VA 0x00F41020 / 24 bytes: 431.02 GP106 graphics resource: fecs_header; donor 431 descriptor 0xd63378
+  OLD <EOF>; appended SHA-256 b84cbd2a302f66b68073378c9a9989ef22b4e0e6771263c2b5478d1072b9a011
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F31038 / VA 0x00F41038 / 8 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc
+  NEW 8 zero bytes
+
+FILE 0x00F31040 / VA 0x00F41040 / 512 bytes: 431.02 GP106 graphics resource: gpccs_boot; donor 431 descriptor 0xd64890
+  OLD <EOF>; appended SHA-256 7f78dd896c0efef9eac0c2db7e7f9f10682394b5a16478a306ab7188aeea9e39
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F31240 / VA 0x00F41240 / 24 bytes: 431.02 GP106 graphics resource: gpccs_header; donor 431 descriptor 0xd64830
+  OLD <EOF>; appended SHA-256 8dfd044c4ebd59782df05899d29447161e388adfa935e1d1bfe5b516b14d23ae
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F31258 / VA 0x00F41258 / 8 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc
+  NEW 8 zero bytes
+
+FILE 0x00F31260 / VA 0x00F41260 / 3584 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_image; donor 431 descriptor 0xd6b760
+  OLD <EOF>; appended SHA-256 c581260c32738792a606c437d4b25b55014de6969f7d3aa084a54d3a5e434dc2
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F32060 / VA 0x00F42060 / 36 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_header; donor 431 descriptor 0xd6b718
+  OLD <EOF>; appended SHA-256 d9742ed92f02dcaa5cf2f4e35aeefa509daddbfe39ec0e22342c6c07f3098d84
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F32084 / VA 0x00F42084 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00F320A0 / VA 0x00F420A0 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_patch_loc; donor 431 descriptor 0xd6b6d0
+  OLD <EOF>; appended SHA-256 adc671d807e961c3ca7feeed16a7be28f816664fd7932c9202ba6640df96e6db
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F320A4 / VA 0x00F420A4 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00F320C0 / VA 0x00F420C0 / 4 bytes: Retain Driver 71 431.02 VPR component: vpr_ucode_patch_sig; donor 431 descriptor 0xd6b6a0
+  OLD <EOF>; appended SHA-256 df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+  NEW 4 zero bytes
+
+FILE 0x00F320C4 / VA 0x00F420C4 / 28 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8
+  NEW 28 zero bytes
+
+FILE 0x00F320E0 / VA 0x00F420E0 / 16 bytes: Retain Driver 71 431.02 VPR component: vpr_sig_dbg; donor 431 descriptor 0xd6b670
+  OLD <EOF>; appended SHA-256 f25c2b207901a0db3885f59cdde8e465aba8bb827e6a91335cacf5a34c8f783c
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F320F0 / VA 0x00F420F0 / 16 bytes: Zero padding to 32-byte firmware alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+
+FILE 0x00F32100 / VA 0x00F42100 / 16 bytes: Retain Driver 71 431.02 VPR component: vpr_sig_prod; donor 431 descriptor 0xd6b658
+  OLD <EOF>; appended SHA-256 86137d85fb8abe8b37338815a849562e71e4216ccb0fc008934d517b69797647
+  NEW bytes: extracted verbatim from the pinned donor descriptor; see inputs-and-layout.json
+
+FILE 0x00F32110 / VA 0x00F42110 / 16 bytes: Zero padding to final PE alignment
+  OLD <EOF>; appended SHA-256 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
+  NEW 16 zero bytes
+

@@ -1,0 +1,222 @@
+{
+  "cases": [
+    {
+      "seed": 0,
+      "driver75_clock_10kHz": 97275,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": 1095559423,
+      "driver75_clock_10kHz": 97275,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": 1431655765,
+      "driver75_clock_10kHz": 56559,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": 2863311530,
+      "driver75_clock_10kHz": 56559,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": 4294967295,
+      "driver75_clock_10kHz": 56559,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": 119979,
+      "driver75_clock_10kHz": 56559,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    },
+    {
+      "seed": "sequence",
+      "driver75_clock_10kHz": 56559,
+      "driver76_clock_10kHz": 97275,
+      "driver76_dp": [
+        {
+          "dp_clock": 97275,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 256,
+          "depth": 2
+        }
+      ]
+    }
+  ],
+  "parser_controls": {
+    "ASUS": [
+      106656,
+      1431655765,
+      1431655765
+    ],
+    "Samsung60": [
+      47984,
+      1431655765,
+      1431655765
+    ],
+    "neighbor": [
+      97275,
+      1431655765,
+      1431655765
+    ],
+    "different_clock": [
+      97274,
+      1431655765,
+      1431655765
+    ],
+    "no_clock": [
+      0,
+      120000,
+      120000
+    ],
+    "extended_JVC": [
+      0,
+      60000,
+      60000
+    ]
+  },
+  "asus": [
+    {
+      "request": 60,
+      "rate_code": 30,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        53325
+      ],
+      "display_events": [
+        {
+          "dp_clock": 53325,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 3
+        },
+        {
+          "mask": 1024,
+          "depth": 3
+        }
+      ],
+      "stop": "0x481a0"
+    },
+    {
+      "request": 120,
+      "rate_code": 30,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        106656
+      ],
+      "display_events": [
+        {
+          "dp_clock": 106656,
+          "rate": 30,
+          "lanes": 4,
+          "depth": 2
+        },
+        {
+          "mask": 1024,
+          "depth": 2
+        }
+      ],
+      "stop": "0x481a0"
+    },
+    {
+      "request": 120,
+      "rate_code": 20,
+      "mini_events": [
+        "0x454ad4",
+        "0x45b208",
+        "0xd69f33"
+      ],
+      "reply_clocks": [
+        106656
+      ],
+      "display_events": [],
+      "stop": "0x49885"
+    }
+  ],
+  "hbr2_stop": "0x49885"
+}

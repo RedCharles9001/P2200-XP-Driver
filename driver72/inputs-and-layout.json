@@ -1,0 +1,265 @@
+{
+  "title": "P2200 Driver 72 Clean RC1",
+  "inputs": {
+    "baseline": {
+      "filename": "Forceware.382.69.10-19-2026.exe",
+      "sha256": "e3fc9dc564e0d5dcf2967cf4065ec4d21c5818041ac5554ef98032fa61fe3fe2",
+      "module_sha256": "9471ff8025e2f031d017b3e818dd5aa51ab267670e1ba7b2e96f329e0d805145"
+    },
+    "431": {
+      "filename": "431.02-quadro-desktop-notebook-win8-win7-64bit-international-whql.exe",
+      "sha256": "f756b631ab064082fd14a063d9b6594534c83525dfb761a55eb1ad41bd81a292",
+      "module_sha256": "d0c0994bff6a18989c998054740f751f8843f5d25ef73ba49bfd42eb7fe62c09"
+    },
+    "384": {
+      "filename": "384.94-desktop-win8-win7-64bit-international-whql.exe",
+      "sha256": "4a0a63092c8308815e4d8d4a0872f0a51b8f8bcd165e6d87004589142a8fd5f1",
+      "module_sha256": "8735743e80f563937e06244cdb9137e8a2b015501a2ae701cf433cf69df705db"
+    }
+  },
+  "baseline_bytes": 15704256,
+  "code_bytes": 1024,
+  "resources": [
+    {
+      "name": "acr_ucode_image",
+      "donor": "431",
+      "descriptor_va": 14066272,
+      "size": 16640,
+      "sha256": "b03fcb3095f6fe336dbd83f3140953e1df4f57f7f1cd25829bef8e7d25e50670",
+      "target_descriptor_va": 15468528,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15705280,
+      "output_va": 15770816
+    },
+    {
+      "name": "acr_ucode_header",
+      "donor": "431",
+      "descriptor_va": 14066224,
+      "size": 36,
+      "sha256": "36c28f92af5434521a95a0e4aa3bd3581862097b6d9d1d66d594b550c2eba7ce",
+      "target_descriptor_va": 15468540,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15721920,
+      "output_va": 15787456
+    },
+    {
+      "name": "acr_ucode_sig_prod",
+      "donor": "431",
+      "descriptor_va": 14066200,
+      "size": 16,
+      "sha256": "95a09807a641407e96e3bbc2d8e245f3317400fd9b7ff6d41f63742e98386007",
+      "target_descriptor_va": 15468552,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15721984,
+      "output_va": 15787520
+    },
+    {
+      "name": "acr_ucode_sig_dbg",
+      "donor": "431",
+      "descriptor_va": 14066176,
+      "size": 16,
+      "sha256": "ab2c7bc462fad7cc90a43557b0e04934f71edf4ba688c63f7c4610df6edfd82d",
+      "target_descriptor_va": 15468564,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15722016,
+      "output_va": 15787552
+    },
+    {
+      "name": "acr_ucode_sig_patch_loc",
+      "donor": "431",
+      "descriptor_va": 14066152,
+      "size": 4,
+      "sha256": "0ce8c4b562c5ce2df3b2594a0cd35260bb8d883b3e453ec03c30f9f7ad5b2d1c",
+      "target_descriptor_va": 15468576,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15722048,
+      "output_va": 15787584
+    },
+    {
+      "name": "acr_ucode_sig_patch_ind",
+      "donor": "431",
+      "descriptor_va": 14066128,
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "target_descriptor_va": 15468588,
+      "reason": "431.02 matched ACR resource",
+      "output_offset": 15722080,
+      "output_va": 15787616
+    },
+    {
+      "name": "sec2_image",
+      "donor": "384",
+      "descriptor_va": 7276776,
+      "size": 115200,
+      "sha256": "83da355a48789b454f214ff27e451dfdacf57eecc6d589efeaa957ee1ed993fa",
+      "target_descriptor_va": 15468600,
+      "reason": "384.94 alternate SEC2 resource",
+      "output_offset": 15722112,
+      "output_va": 15787648
+    },
+    {
+      "name": "sec2_desc",
+      "donor": "384",
+      "descriptor_va": 7277040,
+      "size": 656,
+      "sha256": "9e1ac1a2deec070736d9f40eb989508ebe0df78d7b9c6de4d5a095e79bc1bff7",
+      "target_descriptor_va": 15468612,
+      "reason": "384.94 alternate SEC2 resource",
+      "output_offset": 15837312,
+      "output_va": 15902848
+    },
+    {
+      "name": "sec2_signature",
+      "donor": "384",
+      "descriptor_va": 7277312,
+      "size": 192,
+      "sha256": "3ab5df9fc2fd37a52b0c8fb7cc548dc3e6b1a231a6011c7429af64899c765dda",
+      "target_descriptor_va": 15468624,
+      "reason": "384.94 alternate SEC2 resource",
+      "output_offset": 15837984,
+      "output_va": 15903520
+    },
+    {
+      "name": "fecs_signature",
+      "donor": "431",
+      "descriptor_va": 14038264,
+      "size": 192,
+      "sha256": "8cf4bd43cb675037c04f401253d35b8a933d1bf04b98a24b9a4fd79782075a87",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15838176,
+      "output_va": 15903712
+    },
+    {
+      "name": "gpccs_signature",
+      "donor": "431",
+      "descriptor_va": 14037208,
+      "size": 192,
+      "sha256": "9f7608fb280bc65b07458167ba0dee7a82a1b4c244a2bfe866fe7bcffee25a09",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15838368,
+      "output_va": 15903904
+    },
+    {
+      "name": "gr_bundle",
+      "donor": "431",
+      "descriptor_va": 14039056,
+      "size": 90288,
+      "sha256": "721b4d4f25d1d4327f0bda57bffb58b878d55859bb3062c8bf6c97e33aa00169",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15838560,
+      "output_va": 15904096
+    },
+    {
+      "name": "fecs_boot",
+      "donor": "431",
+      "descriptor_va": 14037952,
+      "size": 512,
+      "sha256": "a350776acb6d80ac30594f962aa6e02f9ae8080960773914648aeae7aadc504c",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15928864,
+      "output_va": 15994400
+    },
+    {
+      "name": "fecs_header",
+      "donor": "431",
+      "descriptor_va": 14037880,
+      "size": 24,
+      "sha256": "b84cbd2a302f66b68073378c9a9989ef22b4e0e6771263c2b5478d1072b9a011",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15929376,
+      "output_va": 15994912
+    },
+    {
+      "name": "gpccs_boot",
+      "donor": "431",
+      "descriptor_va": 14043280,
+      "size": 512,
+      "sha256": "7f78dd896c0efef9eac0c2db7e7f9f10682394b5a16478a306ab7188aeea9e39",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15929408,
+      "output_va": 15994944
+    },
+    {
+      "name": "gpccs_header",
+      "donor": "431",
+      "descriptor_va": 14043184,
+      "size": 24,
+      "sha256": "8dfd044c4ebd59782df05899d29447161e388adfa935e1d1bfe5b516b14d23ae",
+      "reason": "431.02 GP106 graphics resource",
+      "output_offset": 15929920,
+      "output_va": 15995456
+    },
+    {
+      "name": "vpr_ucode_image",
+      "donor": "431",
+      "descriptor_va": 14071648,
+      "size": 3584,
+      "sha256": "c581260c32738792a606c437d4b25b55014de6969f7d3aa084a54d3a5e434dc2",
+      "target_pointer_va": 15467713,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15929952,
+      "output_va": 15995488
+    },
+    {
+      "name": "vpr_ucode_header",
+      "donor": "431",
+      "descriptor_va": 14071576,
+      "size": 36,
+      "sha256": "d9742ed92f02dcaa5cf2f4e35aeefa509daddbfe39ec0e22342c6c07f3098d84",
+      "target_pointer_va": 15467720,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15933536,
+      "output_va": 15999072
+    },
+    {
+      "name": "vpr_ucode_patch_loc",
+      "donor": "431",
+      "descriptor_va": 14071504,
+      "size": 4,
+      "sha256": "adc671d807e961c3ca7feeed16a7be28f816664fd7932c9202ba6640df96e6db",
+      "target_pointer_va": 15467740,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15933600,
+      "output_va": 15999136
+    },
+    {
+      "name": "vpr_ucode_patch_sig",
+      "donor": "431",
+      "descriptor_va": 14071456,
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "target_pointer_va": 15467747,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15933632,
+      "output_va": 15999168
+    },
+    {
+      "name": "vpr_sig_dbg",
+      "donor": "431",
+      "descriptor_va": 14071408,
+      "size": 16,
+      "sha256": "f25c2b207901a0db3885f59cdde8e465aba8bb827e6a91335cacf5a34c8f783c",
+      "target_pointer_va": 15467733,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15933664,
+      "output_va": 15999200
+    },
+    {
+      "name": "vpr_sig_prod",
+      "donor": "431",
+      "descriptor_va": 14071384,
+      "size": 16,
+      "sha256": "86137d85fb8abe8b37338815a849562e71e4216ccb0fc008934d517b69797647",
+      "target_pointer_va": 15467726,
+      "reason": "Retain Driver 71 431.02 VPR component",
+      "output_offset": 15933696,
+      "output_va": 15999232
+    }
+  ],
+  "output_bytes": 15933728,
+  "display_dll_sha256": "c593f83dc6bf1b61ac791302aa8e3178b3a680975bd1a2395575ebbb3063b959",
+  "rule": "3840,2160,32,120,*,AUSAA34,ADD,OEM,106656,4000,48,32,2222,3,5,+-",
+  "expected_miniport_sha256": "522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc",
+  "code_sha256": "c1eb43315792977d55238908775a13134ced650d753eb6d61fae041f9a4ac98b",
+  "symbols_sha256": "0892fb4d348e532e7466be603fe22e7f78fdeee4f5b199f21d04200f6dd6346a"
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "miniport_sha256": "522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc",
+  "miniport_bytes": 15933728,
+  "independent_full_extractions": 2,
+  "all_payload_files_equal": true,
+  "payload_file_count": 635,
+  "patch_ledgers_equal": true,
+  "source_files_equal": {
+    "rebuild.py": true,
+    "assemble.py": true,
+    "verify.py": true,
+    "verify_mode.py": true,
+    "inputs-and-layout.json": true,
+    "src/clean.s": true,
+    "src/clean-code.hex": true,
+    "src/symbols.json": true
+  },
+  "all_preserved_inputs_unchanged": true,
+  "live_XP_tested": false
+}

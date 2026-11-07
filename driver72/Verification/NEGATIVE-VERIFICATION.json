@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "cases": [
+    "Real CLI rejects incorrect original SHA before creating output",
+    "Reject wrong supplied donor hash 431",
+    "Reject wrong supplied donor hash 384",
+    "Real CLI refuses existing build directory"
+  ]
+}

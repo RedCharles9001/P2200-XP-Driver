@@ -1,0 +1,26 @@
+P2200 Driver 72 Clean RC1 - source and reproducible patch kit
+
+Based on SupraGSX/Forceware-382.69, pinned source commit:
+aee0c3a4a5dc7558d30f45e6c3d3e44a5f96eb1b
+https://github.com/SupraGSX/Forceware-382.69
+
+GP106 constructor/getter assembly is adapted from that project's
+sources/firmware-current/gp102-106.s. The existing SEC2 adapter is part of the
+supplied upstream binary; only its exact build discriminator changes here.
+The region exception and GR descriptor adapter are supplied as readable assembly.
+
+Scripts and covered assembly are supplied under GPL-3.0-only with the upstream
+NVIDIA integration exception. See LICENSE and NVIDIA-EXCEPTION.txt.
+NVIDIA drivers, firmware and other vendor material retain their own terms.
+This kit does not relicense them. Users supply all three original installers.
+
+The source-only archive includes no NVIDIA firmware or complete driver binary.
+src/clean-code.hex contains only the 1024-byte code/data patch assembled from
+src/clean.s (including zero-initialized resource descriptors and alignment).
+assemble.py permits independent reassembly and verifies every byte and symbol.
+The generated PATCHES.txt/JSON contain complete old/new bytes, including the
+user-supplied firmware. Those generated files stay in the local build output.
+
+AI-assisted development: OpenAI Codex helped investigate, implement, document
+and test this candidate. Human hardware testing is still required. Offline
+emulation models external services and is not evidence of GPU/XP acceptance.

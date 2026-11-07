@@ -1,0 +1,21 @@
+{
+  "title": "P2200 Driver 76 G95SC Candidate",
+  "miniport_sha256": "b180bb3638ec9ea11a4508637d448e298e7a7daf7c1b60750ccffeaba438aac5",
+  "parent_sha256": "522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc",
+  "miniport_bytes": 15934464,
+  "guard_va": 15999264,
+  "guard_bytes": 727,
+  "symbols": {
+    "samsung_saved_guard": 15999264,
+    "known_pair": 15999570,
+    "checksum_loop": 15999703,
+    "reject": 15999729,
+    "samsung_producer": 15999744
+  },
+  "samsung_rule": "5120,1440,32,120,*,SAME028,ADD,OEM,97275,5320,48,32,1524,3,10,+-",
+  "asus_rule": "3840,2160,32,120,*,AUSAA34,ADD,OEM,106656,4000,48,32,2222,3,5,+-",
+  "display_dll_sha256": "c593f83dc6bf1b61ac791302aa8e3178b3a680975bd1a2395575ebbb3063b959",
+  "live_XP_tested": false,
+  "installer_executed": false,
+  "USB_copied": false
+}

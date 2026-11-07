@@ -1,0 +1,13 @@
+# Driver 76 timing changes
+
+**ASUS.** Driver 70's XP investigation saw the requested 4K120 row missing from the mode table. The inherited AUSAA34 rule supplies a 1066.56 MHz raster. The source request uses 32 bits per pixel. Transport depth and bandwidth remain separate checks.
+
+**Samsung.** The full saved monitor EDID advertises the 972.75 MHz timing in its third block (DisplayID). The XP trace returned 256 bytes. The SAME028 rule supplies 5120 x 1440, totals 5320 x 1524, positive H / negative V, at 119.978835 Hz. See the exact two INF rules in BUILD-REPORT.json.
+
+**Why the first attempts panned.** Driver 73 offered a 5120 x 1440 desktop, but the Samsung showed 3840 x 1080. The Driver 74 trace captured the OEM guard rejecting the row, falling back and handing 565.59 MHz to DP configuration. Two dwords at row +40 and +72 contained 0x414CE8FF. Driver 75 also accepted that particular pair and passed a replay of the captured row. It still panned on real XP. An offline fill-pattern experiment showed the words could inherit prior rule storage.
+
+**Construction.** Preferred miniport VAs are given here; see PATCHES.json for file offsets. 0x876870 walks 184-byte records. On the short OEM path the clock is at +0x70. At 0x875AE8 and branch 0x875AFB, a nonzero explicit clock skips the nominal-Hz-times-1000 store at +0x8C. 0x875BE6 copies the first 32-byte raster into the second, carrying +0x8C into +0xAC. 0x876FAD and 0x876FBD copy those fields to the final row at +40 and +72.
+
+**Correction.** Driver 76 redirects 0x875BDB immediately before that copy. The added code checks the Samsung identity, source bounds, OEM action and raster. For the matching record it stores zero at +0x8C, indicating no separate refresh override; the explicit clock and totals define refresh. It restores flags, executes the displaced instruction and resumes the native copy. The saved-mode hook at 0x45A392 retains the narrow Samsung guard inherited from Driver 75. No global range or bandwidth override was added.
+
+**Controls.** All seven starting patterns now build the same row and reach the DisplayPort configuration entry at 972.75 MHz, HBR3 x4, 8 bits per channel. With Driver 75 five of seven fell back. HBR2 continues to reject. Checks also covered ASUS 60/120, another monitor ID, changed clock, 60 Hz at the same source depth, extended OEM forms, and retained firmware behavior. The local suite recorded 222 candidate checks, 336 firmware checks, 330 guard cases and 3,093 region comparisons. Those counts describe overlapping groups. Physical acceptance on Driver 76 was confirmed for the Samsung.

@@ -1,0 +1,5 @@
+inputs/
+build*/
+__pycache__/
+*.exe
+*.dmp

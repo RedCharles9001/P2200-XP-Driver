@@ -1,0 +1,49 @@
+P2200 Driver 72 Clean RC1 - technical review notes for SupraGSX
+November 4, 2026
+
+STATUS: offline verified candidate; the exact clean image still needs real XP testing.
+AI-assisted investigation, implementation and documentation; disclosure in NOTICE.txt.
+
+This work layers on Forceware.382.69.10-19-2026.exe. It does not reproduce that
+upstream package from stock NVIDIA sources. All existing upstream fixes remain.
+
+Review entry points:
+  inputs-and-layout.json  exact installers, decoded resources and destination offsets
+  src/clean.s            complete readable source for the new 1024-byte code patch
+  PATCH-MAP.txt          fixed-offset old/new bytes plus appended resource provenance
+  rebuild.py            guarded extraction, resource verification and patch application
+  verify.py             independent allowlist and relocated x86 checks
+  verify_mode.py        saved ASUS mode to DisplayPort configuration boundary
+
+Only these clean changes are layered on the upstream miniport:
+  431.02 matched ACR; alternate 384.94 SEC2 and its exact adapter build guard;
+  exact fifth-comparison 12/15 exception; all seven 431.02 GP106 GR resources
+  with signature-selected, bounded 76-to-84 descriptor conversion; retained
+  431.02 VPR resources from the working Driver 71 configuration.
+The four non-targeted region comparisons before the exception and the strict
+sixth comparison remain. Expected field0 is read once, and EAX is preserved.
+
+Original FIFO CALL 0x46E7A6 -> 0x4D10F0, initialization paths and timers are live
+again. Our earlier kernel/DLL tracing, telemetry buffers, suppression and forced
+stops/returns are absent because the candidate is reconstructed from upstream.
+The displayed normal error handling and upstream's own patches are retained.
+
+The separate INF rule adds 3840x2160, 32-bit source, 120 Hz for AUSAA34:
+  pixel clock 1066.56 MHz; H total 4000/front 48/sync 32/back 80;
+  V total 2222/front 3/sync 5/back 54; +H/-V.
+The display DLL is exactly the October 19/Driver 69 DLL. Link, depth and
+bandwidth validation are unchanged. The offline DP replay accepts HBR3 x4 and
+selects RGB8 for this timing; it rejects insufficient HBR2 x4. A 32-bit XP
+framebuffer is different from 8 bits per color channel on the DP cable.
+
+The offline mode replay supplies a synthetic source cache and models external
+OS replies; it stops before physical DP programming. Boot, GPU execution,
+monitor acceptance, timer behavior and restored FIFO behavior require hardware.
+Do not describe this clean candidate as proven merely because Driver 71 worked.
+
+For review/sharing use P2200-Driver72-Clean-RC1-Rebuild.zip. It contains source,
+small authored patch bytes, license/attribution, a serial-redacted EDID fixture
+and verification results. It excludes NVIDIA binaries/firmware, XP captures,
+crash dumps and the private rollback installer. Each local rebuild generates
+PATCHES.txt with all old/new bytes, including user-supplied firmware bytes.
+Other P2200 owners can rebuild and test; the timing rule is ASUS-specific.

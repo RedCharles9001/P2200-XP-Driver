@@ -1,0 +1,17 @@
+P2200 Driver 72 Clean RC1 | November 4, 2026
+
+Offline verified; real XP test pending.
+Miniport SHA-256: 522eac5cf10d9cb08c986f2feac389fee863ceee392e4fb39edd47d7c77ef7bc
+Miniport bytes: 15933728
+
+Two independent full rebuilds produced identical miniports, all 635 payload files,
+and the complete byte ledger. 336 offline checks include 3093 region cases at
+three load bases. The saved 1066.56 MHz mode reaches the DP boundary with HBR3 x4;
+insufficient HBR2 x4 rejects. All eight Windows 11 launcher guards passed.
+
+All 22 retained firmware resources match Driver 71. VPR was retained by explicit
+operator choice. Driver 71 and the Driver 69 rollback remain unchanged.
+
+No installer was executed. No real GPU programming, XP boot, monitor Information
+screen, games, restored FIFO behavior or timer behavior has been confirmed for
+this clean candidate. Use XP-TEST.txt and return results for this exact hash.

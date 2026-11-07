@@ -1,0 +1,115 @@
+{
+  "driver71_sha256": "6525c16128d2e317850db3db807a66aacfcaa6186f9a9d1278f25cee969bef1d",
+  "resources": [
+    {
+      "resource": "acr_ucode_image",
+      "sha256": "b03fcb3095f6fe336dbd83f3140953e1df4f57f7f1cd25829bef8e7d25e50670",
+      "matches_driver71": true
+    },
+    {
+      "resource": "acr_ucode_header",
+      "sha256": "36c28f92af5434521a95a0e4aa3bd3581862097b6d9d1d66d594b550c2eba7ce",
+      "matches_driver71": true
+    },
+    {
+      "resource": "acr_ucode_sig_prod",
+      "sha256": "95a09807a641407e96e3bbc2d8e245f3317400fd9b7ff6d41f63742e98386007",
+      "matches_driver71": true
+    },
+    {
+      "resource": "acr_ucode_sig_dbg",
+      "sha256": "ab2c7bc462fad7cc90a43557b0e04934f71edf4ba688c63f7c4610df6edfd82d",
+      "matches_driver71": true
+    },
+    {
+      "resource": "acr_ucode_sig_patch_loc",
+      "sha256": "0ce8c4b562c5ce2df3b2594a0cd35260bb8d883b3e453ec03c30f9f7ad5b2d1c",
+      "matches_driver71": true
+    },
+    {
+      "resource": "acr_ucode_sig_patch_ind",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "matches_driver71": true
+    },
+    {
+      "resource": "sec2_image",
+      "sha256": "83da355a48789b454f214ff27e451dfdacf57eecc6d589efeaa957ee1ed993fa",
+      "matches_driver71": true
+    },
+    {
+      "resource": "sec2_desc",
+      "sha256": "9e1ac1a2deec070736d9f40eb989508ebe0df78d7b9c6de4d5a095e79bc1bff7",
+      "matches_driver71": true
+    },
+    {
+      "resource": "sec2_signature",
+      "sha256": "3ab5df9fc2fd37a52b0c8fb7cc548dc3e6b1a231a6011c7429af64899c765dda",
+      "matches_driver71": true
+    },
+    {
+      "resource": "fecs_signature",
+      "sha256": "8cf4bd43cb675037c04f401253d35b8a933d1bf04b98a24b9a4fd79782075a87",
+      "matches_driver71": true
+    },
+    {
+      "resource": "gpccs_signature",
+      "sha256": "9f7608fb280bc65b07458167ba0dee7a82a1b4c244a2bfe866fe7bcffee25a09",
+      "matches_driver71": true
+    },
+    {
+      "resource": "gr_bundle",
+      "sha256": "721b4d4f25d1d4327f0bda57bffb58b878d55859bb3062c8bf6c97e33aa00169",
+      "matches_driver71": true
+    },
+    {
+      "resource": "fecs_boot",
+      "sha256": "a350776acb6d80ac30594f962aa6e02f9ae8080960773914648aeae7aadc504c",
+      "matches_driver71": true
+    },
+    {
+      "resource": "fecs_header",
+      "sha256": "b84cbd2a302f66b68073378c9a9989ef22b4e0e6771263c2b5478d1072b9a011",
+      "matches_driver71": true
+    },
+    {
+      "resource": "gpccs_boot",
+      "sha256": "7f78dd896c0efef9eac0c2db7e7f9f10682394b5a16478a306ab7188aeea9e39",
+      "matches_driver71": true
+    },
+    {
+      "resource": "gpccs_header",
+      "sha256": "8dfd044c4ebd59782df05899d29447161e388adfa935e1d1bfe5b516b14d23ae",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_ucode_image",
+      "sha256": "c581260c32738792a606c437d4b25b55014de6969f7d3aa084a54d3a5e434dc2",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_ucode_header",
+      "sha256": "d9742ed92f02dcaa5cf2f4e35aeefa509daddbfe39ec0e22342c6c07f3098d84",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_ucode_patch_loc",
+      "sha256": "adc671d807e961c3ca7feeed16a7be28f816664fd7932c9202ba6640df96e6db",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_ucode_patch_sig",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_sig_dbg",
+      "sha256": "f25c2b207901a0db3885f59cdde8e465aba8bb827e6a91335cacf5a34c8f783c",
+      "matches_driver71": true
+    },
+    {
+      "resource": "vpr_sig_prod",
+      "sha256": "86137d85fb8abe8b37338815a849562e71e4216ccb0fc008934d517b69797647",
+      "matches_driver71": true
+    }
+  ]
+}

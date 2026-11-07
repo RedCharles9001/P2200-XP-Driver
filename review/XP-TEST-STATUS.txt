@@ -1,0 +1,8 @@
+Driver 76 | Quadro P2200 on XP | Samsung Odyssey G95SC over DisplayPort
+November 6, 2026: Owner reported "Driver 76 worked."
+Status: Owner-reported working. The report does not specify the Samsung's
+active resolution/refresh readout or whether stable, pan-free output persisted
+after reboot. Confirm those details with the owner for final acceptance.
+November 6, 2026 follow-up: Asked whether the Samsung still showed 5120 x 1440
+at 120 Hz after reboot with stable output and no panning. Owner replied
+"ok still works." Status: Samsung hardware test accepted by owner after reboot.
