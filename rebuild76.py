@@ -4,7 +4,7 @@ import pefile
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 from guard import *
 HERE=Path(__file__).resolve().parent
-LOCK=json.loads((HERE/'driver72/inputs-and-layout.json').read_text())
+LOCK=json.loads((HERE/'rebuild-base/inputs-and-layout.json').read_text())
 RULE='5120,1440,32,120,*,SAME028,ADD,OEM,97275,5320,48,32,1524,3,10,+-'
 TITLE='P2200 Driver 76 G95SC Candidate'
 sha=lambda data:hashlib.sha256(data).hexdigest()
@@ -85,7 +85,7 @@ def payload(clean,out,mini):
 
 if __name__=='__main__':
  ap=argparse.ArgumentParser(description='Build and verify all 635 Driver 76 payload files.')
- ap.add_argument('--clean72',type=Path,required=True)
+ ap.add_argument('--rebuild-base','--clean72',dest='clean72',type=Path,required=True,help='Intermediate output produced by rebuild-base/rebuild.py')
  ap.add_argument('--out',type=Path,required=True)
  args=ap.parse_args()
  args.out.mkdir(parents=True,exist_ok=False)
